@@ -11,6 +11,7 @@
     <modules>
         <module>agentmain</module>
         <module>mainwork</module>
+        <module>InterFace</module>
     </modules>
 
 

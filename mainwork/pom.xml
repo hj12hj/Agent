@@ -10,6 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mainwork</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hj</groupId>
+            <artifactId>InterFace</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 <build>
     <plugins>
         <plugin>
