@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.instrument.Instrumentation;
 
 
-
 public class App {
 
     public static void premain(String agentArgs, Instrumentation instrumentation) {
@@ -17,7 +16,7 @@ public class App {
 
         new AgentBuilder.Default()
                 .type(ElementMatchers.isAnnotatedWith(RestController.class))
-                .transform((builder, type, classLoader, module) -> builder.method(ElementMatchers.isAnnotatedWith(Test1.class)).intercept(MethodDelegation.to(RedisLock.class)))
+                .transform((builder, type, classLoader, module) -> builder.method(ElementMatchers.isAnnotatedWith(Lock.class)).intercept(MethodDelegation.to(RedisLock.class)))
                 .installOn(instrumentation);
     }
 
@@ -25,4 +24,5 @@ public class App {
 
 
     }
+
 }
